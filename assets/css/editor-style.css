@@ -1,0 +1,7 @@
+.is-style-counted-heading {
+  counter-reset: h2;
+}
+.is-style-counted-heading::before {
+  counter-increment: h2;
+  content: counter(h2) ". ";
+}
