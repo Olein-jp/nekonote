@@ -27,12 +27,12 @@ add_action(
 		$nekonote_block_patterns = apply_filters( 'nekonote_block_patterns', $nekonote_block_patterns );
 
 		foreach ( $nekonote_block_patterns as $block_pattern ) {
-			$block_pattern_file = get_theme_file_path( '/inc/patterns/assets/' . $block_pattern . '.php' );
+			$block_pattern_file = NEKONOTE_PLUGIN_PATH . 'inc/patterns/assets/' . $block_pattern . '.php';
 
-//			register_block_pattern(
-//				'nekonote/' . $block_pattern,
-//				require $block_pattern_file
-//			);
+			register_block_pattern(
+				'nekonote/' . $block_pattern,
+				require $block_pattern_file
+			);
 		}
 	}
 );
